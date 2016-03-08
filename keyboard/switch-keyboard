@@ -1,0 +1,24 @@
+#!/bin/bash
+
+to_br() {
+	sudo loadkeys br-abnt2
+	sudo setxkbmap br
+	sudo localectl set-x11-keymap --no-convert br
+}
+
+to_uk() {
+	sudo loadkeys uk
+	sudo setxkbmap gb intl
+	sudo localectl set-x11-keymap --no-convert gb pc105 intl
+}
+
+current_keyboard=$(/usr/local/bin/xkb-switch)
+
+if [ $current_keyboard == 'br' ]; then
+	to_uk;
+elif [ $current_keyboard == 'gb(intl)' ]; then
+	to_br;
+else
+	echo "current unknown, switching to uk"
+	to_uk;
+fi
