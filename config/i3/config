@@ -185,11 +185,11 @@ client.urgent #d33682 #d33682 #fdf6e3 #dc322f
 ### Multimedia Keys
 
 # increase volume
-bindsym XF86AudioRaiseVolume exec "amixer -q set Master 5%+ unmute; pkill -RTMIN+10 i3blocks"
+bindsym XF86AudioRaiseVolume exec "amixer -q set Master 2%+ unmute; pkill -RTMIN+10 i3blocks"
 # decrease volume
-bindsym XF86AudioLowerVolume exec "amixer -q set Master 5%- unmute; pkill -RTMIN+10 i3blocks"
+bindsym XF86AudioLowerVolume exec "amixer -q set Master 2%- unmute; pkill -RTMIN+10 i3blocks"
 # mute volume
-bindsym XF86AudioMute exec "amixer -q set Master mute; pkill -RTMIN+10 i3blocks"
+bindsym XF86AudioMute exec "amixer -q set Headphone unmute && amixer -q set Speaker unmute && amixer -q set Master toggle; pkill -RTMIN+10 i3blocks"
 # pause / play / next / previous
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
