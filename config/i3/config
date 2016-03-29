@@ -236,7 +236,7 @@ bindsym --release Print exec "/usr/bin/scrot ~/Pictures/screenshots/%Y-%m-%d_-_%
 bindsym --release $mod+Print exec "/usr/bin/scrot -s ~/Pictures/screenshots/%Y-%m-%d_-_%H-%M-%S.png"
 
 #### Switch keyboard between uk and br
-bindsym --release Ctrl+Mod1+k exec "/usr/bin/switch-keyboard"
+bindsym --release Ctrl+Mod1+k exec "/usr/bin/switch-keyboard; pkill -RTMIN+11 i3blocks"
 
 ### Configure monitors
 bindsym --release Ctrl+Mod1+r exec "/usr/bin/config-monitors.sh"
