@@ -12,6 +12,7 @@ HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+export TERM=xterm-color
 export HISTFILESIZE=-1
 export HISTSIZE=-1
 
