@@ -1,15 +1,19 @@
 #!/bin/bash
 
+LOADKEYS=/usr/bin/loadkeys
+SETXKBMAP=/usr/bin/setxkbmap
+LOCALECTL=/usr/bin/localectl
+
 to_br() {
-	sudo loadkeys br-abnt2
-	sudo setxkbmap br
-	sudo localectl set-x11-keymap --no-convert br
+	sudo $LOADKEYS br-abnt2
+	sudo $SETXKBMAP br
+	sudo $LOCALECTL set-x11-keymap --no-convert br
 }
 
 to_uk() {
-	sudo loadkeys uk
-	sudo setxkbmap gb intl
-	sudo localectl set-x11-keymap --no-convert gb pc105 intl
+	sudo $LOADKEYS uk
+	sudo $SETXKBMAP gb intl
+	sudo $LOCALECTL set-x11-keymap --no-convert gb pc105 intl
 }
 
 current_keyboard=$(/usr/local/bin/xkb-switch)
