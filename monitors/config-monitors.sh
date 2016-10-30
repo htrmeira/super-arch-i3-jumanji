@@ -6,7 +6,7 @@ XRANDR=/usr/bin/xrandr
 # We are excluding the original and primary monitor (LVDS1)
 # And VIRTUAL1 to avoid mistakes
 list_connected_mointors() {
-	$XRANDR | grep -v ^' \|^VIRTUAL1\|^LVDS1' | grep -iw 'connected' | awk '{ print $1 }'
+	$XRANDR | grep -v ^' \|^VIRTUAL1\|^LVDS-1' | grep -iw 'connected' | awk '{ print $1 }'
 }
 
 # Counts that number of connected monitors
@@ -28,7 +28,7 @@ get_connected_monitors_names() {
 		local monitor=$(list_connected_mointors);
 
 		echo "Configuring $monitor..."
-		$XRANDR --output $monitor --auto --right-of LVDS1
+		$XRANDR --output $monitor --auto --right-of LVDS-1
 	else
 		echo "Unknown number of monitors"
 		echo "This might mean more than 2 monitors or an internal error"
